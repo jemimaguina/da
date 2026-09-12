@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jemima Guina — Director & Entrepreneur</title>
+<meta name="description" content="Jemima Guina — Director, filmmaker and business owner.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#eee7db;color:#302b25;font-family:"DM Sans",sans-serif;font-weight:300;line-height:1.6}
+a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+:root{--beige:#eee7db;--cream:#f6f1e9;--brown:#302b25;--soft:#6f655b;--line:rgba(48,43,37,.18);--serif:"Cormorant Garamond",serif}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:25px 5vw;background:rgba(238,231,219,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--serif);font-size:25px;font-weight:600;letter-spacing:1px}.nav-links{display:flex;gap:35px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}.nav-links a{position:relative}.nav-links a:after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--brown);transition:.3s}.nav-links a:hover:after{width:100%}
+.hero{min-height:100vh;padding:150px 7vw 80px;display:flex;flex-direction:column;justify-content:center}.hero-small{font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:30px;color:var(--soft)}.hero h1{font-family:var(--serif);font-size:clamp(75px,13vw,190px);line-height:.78;font-weight:500;letter-spacing:-5px;max-width:1000px}.hero h1 span{display:block;font-style:italic;margin-left:10vw}.hero-bottom{margin-top:70px;display:flex;justify-content:space-between;align-items:flex-end;max-width:1100px}.hero-description{max-width:450px;font-size:16px;color:var(--soft)}.scroll{font-size:11px;text-transform:uppercase;letter-spacing:2px}
+section{padding:120px 7vw}.section-number{font-size:11px;letter-spacing:2px;color:var(--soft);margin-bottom:20px}.section-title{font-family:var(--serif);font-size:clamp(50px,7vw,100px);line-height:.9;font-weight:500;margin-bottom:60px}
+.about{background:var(--cream)}.about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:10vw;align-items:start}.about-text{font-family:var(--serif);font-size:clamp(28px,3vw,45px);line-height:1.1}.about-details{color:var(--soft);max-width:500px}.about-details p{margin-bottom:25px}.signature{font-family:var(--serif);font-size:42px;font-style:italic;margin-top:40px}
+.work-intro{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px}.work-intro p{max-width:400px;color:var(--soft)}.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.project{cursor:pointer}.project-image{height:520px;background:#d7cec0;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}.project-image:before{content:"PROJECT IMAGE";font-size:11px;letter-spacing:3px;color:rgba(48,43,37,.45)}.project:nth-child(2){margin-top:100px}.project:nth-child(3){margin-top:-40px}.project:nth-child(4){margin-top:60px}.project-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s}.project:hover img{transform:scale(1.04)}.project-info{padding:18px 3px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.project-title{font-family:var(--serif);font-size:29px}.project-type{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--soft);padding-top:8px}
+.two-worlds{background:#332e28;color:#eee7db}.two-worlds .section-number{color:#bdb3a5}.worlds{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(238,231,219,.2)}.world{padding:70px 50px;background:#332e28;min-height:400px}.world-number{font-size:11px;letter-spacing:2px;color:#bdb3a5;margin-bottom:60px}.world h3{font-family:var(--serif);font-size:55px;font-weight:400;line-height:.9;margin-bottom:30px}.world p{color:#c8c0b5;max-width:450px}.world-list{list-style:none;margin-top:35px}.world-list li{padding:10px 0;border-bottom:1px solid rgba(238,231,219,.15);font-size:13px}
+.experience{background:var(--cream)}.experience-row{display:grid;grid-template-columns:120px 1fr 1fr;gap:40px;padding:30px 0;border-top:1px solid var(--line)}.experience-row:last-child{border-bottom:1px solid var(--line)}.year{font-size:12px;color:var(--soft)}.experience-role{font-family:var(--serif);font-size:30px}.experience-description{color:var(--soft);font-size:14px}
+.skills{display:flex;flex-wrap:wrap;gap:12px;max-width:1000px}.skill{border:1px solid var(--line);border-radius:100px;padding:14px 25px;font-size:12px;letter-spacing:1px;text-transform:uppercase;transition:.3s}.skill:hover{background:var(--brown);color:var(--beige)}
+.contact{min-height:80vh;display:flex;flex-direction:column;justify-content:center;background:var(--cream)}.contact h2{font-family:var(--serif);font-size:clamp(65px,11vw,160px);line-height:.8;font-weight:500;max-width:1100px}.contact h2 span{font-style:italic}.contact-links{display:flex;gap:40px;margin-top:70px;font-size:12px;text-transform:uppercase;letter-spacing:2px}.contact-links a{border-bottom:1px solid var(--brown);padding-bottom:5px}
+footer{padding:30px 7vw;display:flex;justify-content:space-between;font-size:11px;color:var(--soft);text-transform:uppercase;letter-spacing:1px}
+.fade{opacity:0;transform:translateY(30px);animation:fadeUp 1s ease forwards}@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@media(max-width:750px){nav{padding:20px 5vw}.nav-links{gap:15px;font-size:9px}.logo{font-size:21px}.hero{padding:130px 7vw 60px}.hero h1{font-size:75px;letter-spacing:-3px}.hero h1 span{margin-left:15vw}.hero-bottom{flex-direction:column;align-items:flex-start;gap:40px}section{padding:80px 7vw}.about-grid{grid-template-columns:1fr;gap:50px}.projects{grid-template-columns:1fr}.project:nth-child(2),.project:nth-child(3),.project:nth-child(4){margin-top:30px}.project-image{height:420px}.worlds{grid-template-columns:1fr}.world{padding:50px 30px}.experience-row{grid-template-columns:70px 1fr;gap:15px}.experience-description{grid-column:2}.contact-links{flex-direction:column;gap:20px}footer{flex-direction:column;gap:10px}}
+</style>
+
+<style>
+.story-block,.business-intro{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:50px}
+.story-copy h3,.business-intro h3{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:500;line-height:1;margin:10px 0 20px}
+.story-copy p,.business-intro p{line-height:1.8;color:var(--soft)}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;color:var(--soft)}
+.image-grid{display:grid;gap:14px}
+.two-images{grid-template-columns:repeat(2,1fr)}
+.four-images{grid-template-columns:repeat(2,1fr)}
+.five-images{grid-template-columns:repeat(5,1fr)}
+.image-placeholder{margin:0;overflow:hidden;border:1px solid rgba(48,43,37,.14);background:var(--cream)}
+.image-placeholder img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.image-placeholder figcaption{padding:10px 12px;font-size:.7rem;letter-spacing:.04em;color:var(--soft)}
+.social-links{display:flex;gap:24px;flex-wrap:wrap;margin-top:24px}
+.social-links a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+@media(max-width:800px){.story-block,.business-intro{grid-template-columns:1fr;gap:30px}.five-images{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.two-images,.four-images,.five-images{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><a href="#" class="logo">JG.</a><div class="nav-links"><a href="#about">About</a><a href="#work">Work</a><a href="#journey">Journey</a><a href="#business">Business</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero"><div class="hero-small fade">Director · Entrepreneur · Student</div><h1 class="fade">Jemima <span>Guina</span></h1><div class="hero-bottom fade"><p class="hero-description">A filmmaker, entrepreneur and lifelong learner driven by curiosity, creativity and a genuine passion for discovering, building and learning.</p><div class="scroll">↓ Scroll to explore</div></div></header>
+
+<section class="about" id="about"><div class="section-number">01 — About</div><div class="about-grid"><div><h2 class="section-title">About<br>Me</h2></div><div class="about-details"><p class="about-text">I am Jemima Guina, a director and business owner with a passion for passion itself, learning and creating.</p><p>I believe curiosity is one of the most valuable things a person can have. I love learning about new subjects, discovering new perspectives and turning ideas into something tangible.</p><p>My interests have taken me across filmmaking, entrepreneurship, fragrance, skincare and robotics. What connects them all is the same desire: to learn, experiment and create.</p><div class="signature">Jemima.</div></div></div></section>
+
+<section id="work"><div class="section-number">02 — Film</div><div class="work-intro"><h2 class="section-title">Four<br>Stories</h2><p>I have directed four short films, beginning with my very first film at fifteen and continuing to my most recent project, made for my 18th birthday.</p></div><div class="posters" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px"><article><div class="project-image" style="height:auto;aspect-ratio:2/3"><img src="images/screaming-silences.jpg" alt="Screaming Silences poster" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div><div class="project-title">Screaming Silences</div><div class="project-type">Short Film · Director</div></article><article><div class="project-image" style="height:auto;aspect-ratio:2/3"><img src="images/au-fond-je-suis.jpg" alt="Au fond, je suis poster" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div><div class="project-title">Au fond, je suis</div><div class="project-type">Short Film · Director</div></article><article><div class="project-image" style="height:auto;aspect-ratio:2/3"><img src="images/no-more-attieke.jpg" alt="No More Attiéké poster" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div><div class="project-title">No More Attiéké</div><div class="project-type">2 Awards · Festival Selections</div></article><article><div class="project-image" style="height:auto;aspect-ratio:2/3"><img src="images/un-anniv-pas-tres-joyeux.jpg" alt="Un anniversaire pas très joyeux poster" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div><div class="project-title">Un anniversaire pas très joyeux</div><div class="project-type">Short Film · 18th Birthday Project</div></article></div><div style="margin-top:40px;padding:25px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><strong style="font-family:var(--serif);font-size:27px">No More Attiéké</strong><p style="color:var(--soft);font-size:13px;max-width:650px">My film <em>No More Attiéké</em> has received two awards and has also been selected by other festivals.</p></div></section>
+
+<section class="two-worlds"><style>.posters img{display:block}@media(max-width:800px){.posters{grid-template-columns:repeat(2,1fr)!important}}</style><div class="section-number">03 — Two Worlds</div><h2 class="section-title">Creativity<br>Meets Business</h2><div class="worlds">
+<div class="world"><div class="world-number">01 — FILMMAKING</div><h3>Behind<br>the Camera</h3><p>Directing stories from concept to screen, with an interest in character-driven narratives, culture and visual storytelling.</p><ul class="world-list"><li>Direction</li><li>Screenwriting</li><li>Creative Development</li><li>Visual Storytelling</li></ul></div>
+<div class="world"><div class="world-number">02 — ROBOTICS</div><h3>Building<br>Ideas</h3><p>During high school, I explored robotics and competed with my school team. Our team, RobotHer, won a national robotics competition, and I also participated in VEX Robotics internationally in Texas, USA.</p><ul class="world-list"><li>Brand Development</li><li>Marketing</li><li>Creative Strategy</li><li>Entrepreneurship</li><li>Fragrance Making</li></ul></div>
+</div></section>
+
+<section class="experience" id="experience"><div class="section-number">04 — Experience</div><h2 class="section-title">My Journey</h2>
+<div class="experience-row"><div class="year">2026</div><div class="experience-role">Film Director</div><div class="experience-description">Developing and directing short-form narrative projects while exploring African stories and contemporary youth experiences.</div></div>
+<div class="experience-row"><div class="year">2026</div><div class="experience-role">Entrepreneur</div><div class="experience-description">Developing a consumer-focused online business, including branding, product selection, marketing and customer communication.</div></div>
+<div class="experience-row"><div class="year">Present</div><div class="experience-role">Student</div><div class="experience-description">Continuing to develop my academic knowledge while building practical experience across film, business and creative industries.</div></div>
+</section>
+
+<section><div class="section-number">05 — Skills</div><h2 class="section-title">Things I<br>Do</h2><div class="skills"><div class="skill">Film Direction</div><div class="skill">Screenwriting</div><div class="skill">Storytelling</div><div class="skill">Creative Direction</div><div class="skill">Video Editing</div><div class="skill">Branding</div><div class="skill">Marketing</div><div class="skill">Entrepreneurship</div><div class="skill">Project Management</div><div class="skill">Creative Strategy</div></div></section>
+
+
+<section class="section" id="journey">
+  <div class="section-label">03 / Journey</div>
+  <div class="section-heading">
+    <h2>Robotics &amp; Student Leadership</h2>
+    <p>Building, competing, collaborating and learning to lead.</p>
+  </div>
+
+  <div class="story-block">
+    <div class="story-copy">
+      <span class="eyebrow">Robotics</span>
+      <h3>My journey in robotics.</h3>
+      <p>I discovered robotics in high school and quickly became fascinated by the process of building, testing, solving problems and working as a team.</p>
+      <p>With my school team <strong>RobotHer</strong>, I competed in a national robotics competition and we won. I later competed internationally at <strong>VEX Robotics</strong> in Texas, USA.</p>
+    </div>
+    <div class="image-grid two-images">
+      <figure class="image-placeholder"><img src="images/robotics-national.jpg" alt="National robotics competition"><figcaption>National Competition · RobotHer</figcaption></figure>
+      <figure class="image-placeholder"><img src="images/robotics-vex-texas.jpg" alt="VEX Robotics in Texas"><figcaption>VEX Robotics · Texas, USA</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="story-block">
+    <div class="story-copy">
+      <span class="eyebrow">Student Council</span>
+      <h3>Learning to represent and lead.</h3>
+      <p>Being part of my school's student council taught me how to communicate, listen to different perspectives, contribute ideas and take responsibility within my school community.</p>
+    </div>
+    <div class="image-grid four-images">
+      <figure class="image-placeholder"><img src="images/student-council-1.jpg" alt="Student council photo 1"></figure>
+      <figure class="image-placeholder"><img src="images/student-council-2.jpg" alt="Student council photo 2"></figure>
+      <figure class="image-placeholder"><img src="images/student-council-3.jpg" alt="Student council photo 3"></figure>
+      <figure class="image-placeholder"><img src="images/student-council-4.jpg" alt="Student council photo 4"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="business">
+  <div class="section-label">04 / Business</div>
+  <div class="section-heading">
+    <h2>JEM'SIA</h2>
+    <p>A business I created at 14.</p>
+  </div>
+
+  <div class="business-intro">
+    <div>
+      <span class="eyebrow">Entrepreneurship</span>
+      <h3>Inspiring young girls through quality products.</h3>
+    </div>
+    <div>
+      <p>I created <strong>JEM'SIA</strong> when I was 14 years old. Through this small business, I have explored entrepreneurship, branding, customer experience and product selection.</p>
+      <p>My goal is to be inspiring while providing quality skincare and fragrance products to young girls. I also enjoy creating fragrances myself, bringing a personal and creative touch to the business.</p>
+    </div>
+  </div>
+
+  <div class="image-grid five-images" style="margin-top:50px">
+    <figure class="image-placeholder"><img src="images/jemsia-1.jpg" alt="JEM'SIA photo 1"></figure>
+    <figure class="image-placeholder"><img src="images/jemsia-2.jpg" alt="JEM'SIA photo 2"></figure>
+    <figure class="image-placeholder"><img src="images/jemsia-3.jpg" alt="JEM'SIA photo 3"></figure>
+    <figure class="image-placeholder"><img src="images/jemsia-4.jpg" alt="JEM'SIA photo 4"></figure>
+    <figure class="image-placeholder"><img src="images/jemsia-5.jpg" alt="JEM'SIA photo 5"></figure>
+  </div>
+</section>
+
+<section class="contact" id="contact"><div class="section-number">06 — Contact</div><h2>Let's create<br><span>something.</span></h2><div class="contact-links"><a href="mailto:your@email.com">Email</a><a href="https://www.instagram.com/" target="_blank">Instagram</a><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></div></section>
+
+<footer><div>© 2026 Jemima Guina</div><div>Director · Entrepreneur</div><div>Made with intention.</div>
+<div class="social-links">
+  <a href="YOUR_YOUTUBE_URL" target="_blank" rel="noopener">YouTube ↗</a>
+  <a href="YOUR_TIKTOK_URL" target="_blank" rel="noopener">TikTok ↗</a>
+  <a href="YOUR_INSTAGRAM_URL" target="_blank" rel="noopener">Instagram ↗</a>
+</div>
+</footer>
+<script>
+const elements=document.querySelectorAll(".about,.project,.world,.experience-row,.skill,.contact");
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity="1";entry.target.style.transform="translateY(0)"}})},{threshold:.12});
+elements.forEach(element=>{element.style.opacity="0";element.style.transform="translateY(25px)";element.style.transition="opacity .8s ease, transform .8s ease";observer.observe(element)});
+</script>
+</body>
+</html>
