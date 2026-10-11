@@ -1,151 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jemima Guina — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Car Football Arena</title>
 <style>
-:root{--beige:#eee7db;--cream:#f7f2ea;--ink:#302b25;--soft:#756b61;--line:#d8cfc2}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--beige);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.7}
-a{color:inherit;text-decoration:none}
-nav{position:sticky;top:0;z-index:10;background:rgba(238,231,219,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:22px 6vw}
-.logo{font:600 25px "Cormorant Garamond",serif}
-.navlinks{display:flex;gap:28px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase}
-.hero{min-height:78vh;padding:110px 7vw 80px;display:flex;align-items:end;border-bottom:1px solid var(--line)}
-.kicker,.label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
-h1,h2{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:.95}
-h1{font-size:clamp(70px,11vw,155px);max-width:1000px;margin:18px 0 30px}
-.hero p{max-width:560px;color:var(--soft);font-size:17px}
-section{padding:110px 7vw;border-bottom:1px solid var(--line)}
-.sectionhead{display:grid;grid-template-columns:1fr 2fr;gap:40px;margin-bottom:55px}
-h2{font-size:clamp(48px,6vw,82px)}
-.intro{max-width:620px;color:var(--soft);font-size:17px}
-.aboutgrid,.split{display:grid;grid-template-columns:1fr 1fr;gap:70px}
-.aboutgrid p{color:var(--soft);font-size:16px}
-.films{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.card{background:var(--cream);border:1px solid var(--line)}
-.photo{aspect-ratio:3/4;background:#e4dbcf;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#998e82;font-size:12px;text-align:center}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
-.cardtext{padding:17px}.cardtext h3{font:500 25px "Cormorant Garamond",serif;margin-bottom:5px}.cardtext p{font-size:13px;color:var(--soft)}
-.journey,.council,.business{display:grid;grid-template-columns:1fr 1.25fr;gap:70px;align-items:start}
-.copy p{color:var(--soft);max-width:650px;margin-top:20px}
-.gallery2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.gallery2 .photo{aspect-ratio:4/3}
-.gallery4{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.gallery4 .photo{aspect-ratio:4/3}
-.businessgallery{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.businessgallery .photo{aspect-ratio:1/1}
-.socials{display:flex;gap:18px;flex-wrap:wrap;margin-top:25px}
-.socials a{border-bottom:1px solid var(--ink);padding-bottom:3px;font-size:13px}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-.contact p{color:var(--soft);margin-top:18px}
-footer{padding:30px 7vw;display:flex;justify-content:space-between;color:var(--soft);font-size:12px}
-@media(max-width:850px){
-.navlinks{gap:12px;font-size:9px}.hero{min-height:65vh;padding-top:80px}
-.sectionhead,.aboutgrid,.split,.journey,.council,.business,.contact{grid-template-columns:1fr;gap:30px}
-.films{grid-template-columns:1fr 1fr}.businessgallery{grid-template-columns:repeat(2,1fr)}
-}
+  :root{color-scheme:dark;--panel:rgba(8,18,30,.88);--line:rgba(255,255,255,.22)}
+  *{box-sizing:border-box} html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071522;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+  body{display:grid;place-items:center}.wrap{width:min(100vw,1600px);height:100vh;display:grid;place-items:center;position:relative}
+  canvas{display:block;max-width:100%;max-height:100%;background:#65b93f;box-shadow:0 0 50px #0008}
+  #hud{position:absolute;inset:0;pointer-events:none;display:none}.score{position:absolute;top:14px;left:50%;transform:translateX(-50%);min-width:360px;text-align:center;background:var(--panel);border:2px solid #ffffff24;border-radius:14px;padding:9px 18px;box-shadow:0 8px 22px #0005}.scoreline{font-weight:900;font-size:21px;letter-spacing:.8px}.time{font-weight:800;font-size:16px;margin-top:2px;color:#dceeff}
+  button{font:inherit;font-weight:850;border:0;border-radius:12px;padding:12px 22px;cursor:pointer;background:#fff;color:#10202c;box-shadow:0 5px 0 #a9b4bc;transition:.08s transform}.big{font-size:22px;padding:15px 34px}.pauseBtn{position:absolute;right:18px;top:18px;pointer-events:auto;padding:10px 16px}.pauseBtn:active,button:active{transform:translateY(3px);box-shadow:0 2px 0 #8e999f}
+  .screen{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 35%,#18364aee,#06111bf7);z-index:5;color:#fff}.card{width:min(680px,90vw);padding:38px;text-align:center;background:#0d2030e8;border:1px solid #ffffff26;border-radius:24px;box-shadow:0 25px 80px #0008}.card h1{font-size:clamp(36px,6vw,72px);line-height:.92;margin:0 0 20px;text-transform:uppercase}.card p{line-height:1.6;color:#d6e7f2}.controls{margin:20px auto 28px;max-width:510px;text-align:left;background:#071621aa;padding:16px 20px;border-radius:14px}.kbd{display:inline-block;background:#edf4f7;color:#10202c;padding:2px 8px;border-radius:6px;font-weight:900;min-width:34px;text-align:center;margin:2px}.hidden{display:none!important}.overlay{position:absolute;inset:0;display:grid;place-items:center;background:#06111bc9;z-index:6}.overlay .card{width:min(500px,90vw)}.overlay h2{font-size:48px;margin:0 0 12px}.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.count{position:absolute;inset:0;z-index:4;display:grid;place-items:center;pointer-events:none;color:#fff;font-size:clamp(80px,14vw,180px);font-weight:1000;text-shadow:0 8px 0 #0005,0 0 30px #0009}.note{font-size:13px;opacity:.7;margin-top:18px}
 </style>
 </head>
 <body>
-
-<nav>
-<div class="logo">JG.</div>
-<div class="navlinks">
-<a href="#about">About</a><a href="#films">Films</a><a href="#robotics">Robotics</a><a href="#business">Business</a><a href="#council">Student Council</a><a href="#contact">Contact</a>
+<div class="wrap" id="wrap">
+<canvas id="game" width="1280" height="720"></canvas>
+<div id="hud"><div class="score"><div class="scoreline"><span style="color:#54b8ff">PLAYER</span> <span id="ps">0</span> — <span id="rs">0</span> <span style="color:#ff5e68">ROBOT</span></div><div class="time">TIME: <span id="timer">01:00</span></div></div><button class="pauseBtn" id="pause">Pause</button></div>
+<div class="screen" id="start"><div class="card"><h1>Car Football<br>Arena</h1><p>Beat the robot before the 60-second match ends. There is no kick button — use your car, timing, jumps and positioning.</p><div class="controls"><div><span class="kbd">←</span> <span class="kbd">→</span> Drive</div><div><span class="kbd">Space</span> Jump</div><div><span class="kbd">↑</span> Lift the front of the car</div><div><span class="kbd">↓</span> No action</div></div><button class="big" id="play">PLAY</button><div class="note">Desktop keyboard game · One player vs robot</div></div></div>
+<div class="count hidden" id="count"></div>
+<div class="overlay hidden" id="pauseMenu"><div class="card"><h2>PAUSED</h2><p>Everything is frozen.</p><div class="row"><button id="resume">Resume</button><button id="restart1">Restart Game</button></div></div></div>
+<div class="overlay hidden" id="end"><div class="card"><h2 id="result">YOU WIN</h2><p id="finalScore">PLAYER 0 — 0 ROBOT</p><button class="big" id="again">Play Again</button></div></div>
 </div>
-</nav>
-
-<header class="hero">
-<div>
-<div class="kicker">Director · Business Owner · Student</div>
-<h1>Jemima<br>Guina.</h1>
-<p>I am passionate about passion itself, learning, creating and turning ideas into something meaningful.</p>
-</div>
-</header>
-
-<section id="about">
-<div class="sectionhead"><div class="label">01 — About</div><div><h2>Curious by nature.<br>Creative by choice.</h2></div></div>
-<div class="aboutgrid">
-<p>I am Jemima Guina, a director and business owner who loves learning, discovering new subjects and creating things from the ideas that inspire me.</p>
-<p>My interests have taken me across filmmaking, entrepreneurship, fragrance, skincare, robotics and student leadership. What connects them all is my desire to experiment, improve and keep learning.</p>
-</div>
-</section>
-
-<section id="films">
-<div class="sectionhead"><div class="label">02 — Filmmaking</div><div><h2>Four films.<br>One growing voice.</h2><p class="intro">I made my first short film at 15. My most recent film was created for my 18th birthday.</p></div></div>
-<div class="films">
-<div class="card"><div class="photo"><img src="image/screaming-silences.jpg" alt="Screaming Silences poster" onerror="this.style.display='none';this.parentElement.innerHTML='Add screaming-silences.jpg here'"></div><div class="cardtext"><h3>Screaming Silences</h3><p>My first short film, created at 15.</p></div></div>
-<div class="card"><div class="photo"><img src="image/au-fond-je-suis.jpg" alt="Au fond, je suis poster" onerror="this.style.display='none';this.parentElement.innerHTML='Add au-fond-je-suis.jpg here'"></div><div class="cardtext"><h3>Au fond, je suis</h3><p>A film exploring introspection and identity.</p></div></div>
-<div class="card"><div class="photo"><img src="image/no-more-attieke.jpg" alt="No More Attiéké poster" onerror="this.style.display='none';this.parentElement.innerHTML='Add no-more-attieke.jpg here'"></div><div class="cardtext"><h3>No More Attiéké</h3><p>Winner of 2 awards and selected by other festivals.</p></div></div>
-<div class="card"><div class="photo"><img src="image/un-anniv-pas-tres-joyeux.jpg" alt="Un anniversaire pas très joyeux poster" onerror="this.style.display='none';this.parentElement.innerHTML='Add un-anniv-pas-tres-joyeux.jpg here'"></div><div class="cardtext"><h3>Un anniversaire pas très joyeux</h3><p>My most recent film, made for my 18th birthday.</p></div></div>
-</div>
-</section>
-
-<section id="robotics">
-<div class="sectionhead"><div class="label">03 — Robotics</div><div><h2>My journey<br>in robotics.</h2></div></div>
-<div class="journey">
-<div class="copy"><p>I discovered robotics in high school and quickly became fascinated by building, testing, solving problems and working as a team.</p><p>With my school team <strong>RobotHer</strong>, I competed in a national robotics competition and we won. I later competed internationally at <strong>VEX Robotics in Texas, USA.</strong></p></div>
-<div class="gallery2">
-<div class="card"><div class="photo"><img src="image/robotics-national.jpg" alt="National robotics competition" onerror="this.style.display='none';this.parentElement.innerHTML='Add robotics-national.jpg here'"></div><div class="cardtext"><p>National Competition · RobotHer</p></div></div>
-<div class="card"><div class="photo"><img src="image/robotics-vex-texas.jpg" alt="VEX Robotics Texas" onerror="this.style.display='none';this.parentElement.innerHTML='Add robotics-vex-texas.jpg here'"></div><div class="cardtext"><p>VEX Robotics · Texas, USA</p></div></div>
-</div>
-</div>
-</section>
-
-<section id="business">
-<div class="sectionhead"><div class="label">04 — Entrepreneurship</div><div><h2>JEM'SIA</h2></div></div>
-<div class="business">
-<div class="copy"><p>I created <strong>JEM'SIA</strong> when I was 14 years old. It is a small business focused on skincare and perfume/fragrance.</p><p>Through JEM'SIA, I do my best to inspire young girls while providing quality products they can enjoy and feel confident using. I also enjoy creating fragrances myself, bringing a personal and creative side to the business.</p></div>
-<div class="businessgallery">
-<div class="photo"><img src="image/jemsia-1.jpg" alt="JEM'SIA photo 1" onerror="this.style.display='none';this.parentElement.innerHTML='JEM&#39;SIA photo 1'"></div>
-<div class="photo"><img src="image/jemsia-2.jpg" alt="JEM'SIA photo 2" onerror="this.style.display='none';this.parentElement.innerHTML='JEM&#39;SIA photo 2'"></div>
-<div class="photo"><img src="image/jemsia-3.jpg" alt="JEM'SIA photo 3" onerror="this.style.display='none';this.parentElement.innerHTML='JEM&#39;SIA photo 3'"></div>
-<div class="photo"><img src="image/jemsia-4.jpg" alt="JEM'SIA photo 4" onerror="this.style.display='none';this.parentElement.innerHTML='JEM&#39;SIA photo 4'"></div>
-<div class="photo"><img src="image/jemsia-5.jpg" alt="JEM'SIA photo 5" onerror="this.style.display='none';this.parentElement.innerHTML='JEM&#39;SIA photo 5'"></div>
-</div>
-</div>
-</section>
-
-<section id="council">
-<div class="sectionhead"><div class="label">05 — Student Leadership</div><div><h2>Learning to<br>represent and lead.</h2></div></div>
-<div class="council">
-<div class="copy"><p>Being part of my school's <strong>Student Council</strong> taught me how to communicate, listen to different perspectives, contribute ideas and take responsibility within my school community.</p></div>
-<div class="gallery4">
-<div class="photo"><img src="image/student-council-1.jpg" alt="Student Council photo 1" onerror="this.style.display='none';this.parentElement.innerHTML='Student Council photo 1'"></div>
-<div class="photo"><img src="image/student-council-2.jpg" alt="Student Council photo 2" onerror="this.style.display='none';this.parentElement.innerHTML='Student Council photo 2'"></div>
-<div class="photo"><img src="image/student-council-3.jpg" alt="Student Council photo 3" onerror="this.style.display='none';this.parentElement.innerHTML='Student Council photo 3'"></div>
-<div class="photo"><img src="image/student-council-4.jpg" alt="Student Council photo 4" onerror="this.style.display='none';this.parentElement.innerHTML='Student Council photo 4'"></div>
-</div>
-</div>
-</section>
-
-<section id="contact">
-<div class="sectionhead"><div class="label">06 — Connect</div><div><h2>Let's connect.</h2></div></div>
-<div class="contact">
-<div><p>For filmmaking, creative projects, business or collaboration inquiries.</p><div class="socials">
-<a href="https://www.youtube.com/@Jem.s_STUDIO" target="_blank">YouTube</a>
-<a href="https://www.tiktok.com/@jems.studio?_r=1&_t=ZS-99g0TPweMTs" target="_blank">TikTok</a>
-<a href="https://www.instagram.com/jems_.studio?stkn=MXR3NGUyMmM2djJpNw%3D%3D" target="_blank">Instagram</a>
-</div></div>
-<div><p>Replace the links above with your real social media links. You can also add your email here.</p></div>
-</div>
-</section>
-
-<footer><span>Jemima Guina</span><span>© 2026</span></footer>
+<script>
+(()=>{
+'use strict';
+const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+const $=id=>document.getElementById(id), hud=$('hud'),start=$('start'),countEl=$('count'),pauseMenu=$('pauseMenu'),end=$('end');
+const W=1280,H=720, ground=610, leftWall=35,rightWall=1245, goalW=145,goalH=180, goalTop=ground-goalH, goalLineL=90,goalLineR=1190;
+let state='start', scoreP=0,scoreR=0,timeLeft=60,last=0,countdown=0,countStage=0,goalPause=0;
+const keys={};
+const player={x:300,y:ground-34,vx:0,vy:0,w:92,h:40,angle:0,angV:0,onGround:true,color:'#2196f3'};
+const bot={x:980,y:ground-34,vx:0,vy:0,w:92,h:40,angle:Math.PI,angV:0,onGround:true,color:'#ef4451'};
+const ball={x:640,y:ground-35,vx:0,vy:0,r:31};
+function resetPositions(){Object.assign(player,{x:300,y:ground-34,vx:0,vy:0,angle:0,angV:0,onGround:true});Object.assign(bot,{x:980,y:ground-34,vx:0,vy:0,angle:Math.PI,angV:0,onGround:true});Object.assign(ball,{x:640,y:ground-35,vx:0,vy:0});}
+function updateHud(){ $('ps').textContent=scoreP;$('rs').textContent=scoreR;let s=Math.max(0,Math.ceil(timeLeft));$('timer').textContent=`00:${String(s).padStart(2,'0')}`; }
+function beginCountdown(fresh){resetPositions();state='countdown';countdown=3.65;countStage=4;countEl.classList.remove('hidden'); if(fresh){scoreP=scoreR=0;timeLeft=60;updateHud();}}
+function startGame(){start.classList.add('hidden');end.classList.add('hidden');pauseMenu.classList.add('hidden');hud.style.display='block';beginCountdown(true)}
+function restart(){end.classList.add('hidden');pauseMenu.classList.add('hidden');beginCountdown(true)}
+$('play').onclick=startGame;$('again').onclick=restart;$('restart1').onclick=restart;
+$('pause').onclick=()=>{if(state==='playing'){state='paused';pauseMenu.classList.remove('hidden')}};
+$('resume').onclick=()=>{if(state==='paused'){state='playing';pauseMenu.classList.add('hidden');last=performance.now()}};
+addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space'].includes(e.code)){if(state==='playing')e.preventDefault();keys[e.code]=true}});
+addEventListener('keyup',e=>keys[e.code]=false);
+function carPhysics(c,dir,jump,tilt,dt){
+ const accel=c.onGround?1250:420,max=360; c.vx+=dir*accel*dt; if(!dir)c.vx*=Math.pow(c.onGround?.84:.985,dt*60);c.vx=Math.max(-max,Math.min(max,c.vx));
+ if(jump&&c.onGround){c.vy=-505;c.onGround=false;c.angV+=dir*.8}
+ if(tilt&&c.onGround){c.angle+=(c===bot?-1:1)*1.45*dt;} else if(c.onGround){let target=c===bot?Math.PI:0;let d=Math.atan2(Math.sin(target-c.angle),Math.cos(target-c.angle));c.angle+=d*Math.min(1,8*dt)}
+ if(!c.onGround)c.angV*=Math.pow(.992,dt*60);c.angle+=c.angV*dt;c.vy+=1120*dt;c.x+=c.vx*dt;c.y+=c.vy*dt;
+ const floorY=ground-c.h*.48;if(c.y>=floorY){c.y=floorY;c.vy=0;c.onGround=true;c.angV*=.3}
+ c.x=Math.max(leftWall+c.w/2,Math.min(rightWall-c.w/2,c.x));
+}
+function ai(dt){let defend=ball.x>840&&ball.vx>100, target=defend?1080:ball.x+42;let dir=Math.sign(target-bot.x);if(Math.abs(target-bot.x)<35)dir=0;let jump=bot.onGround&&((Math.abs(ball.x-bot.x)<125&&ball.y<bot.y-15)||(ball.x>bot.x-40&&ball.x<bot.x+70&&ball.vy<-100));let tilt=bot.onGround&&Math.abs(ball.x-bot.x)<115&&ball.y<ground-45;carPhysics(bot,dir,jump,tilt,dt)}
+function collideCars(a,b){let dx=b.x-a.x,dy=b.y-a.y,min=(a.w+b.w)*.43;if(Math.abs(dy)<42&&Math.abs(dx)<min){let ov=min-Math.abs(dx),sg=Math.sign(dx)||1;a.x-=sg*ov*.5;b.x+=sg*ov*.5;let av=a.vx,bv=b.vx;a.vx=bv*.35;b.vx=av*.35}}
+function hitBall(c){
+ let dx=ball.x-c.x,dy=ball.y-c.y;let cr=48,dist=Math.hypot(dx,dy),min=cr+ball.r;if(dist<min){let nx=dx/(dist||1),ny=dy/(dist||1),push=min-dist;ball.x+=nx*push;ball.y+=ny*push;let rel=(c.vx-ball.vx)*nx+(c.vy-ball.vy)*ny;if(rel> -40){let imp=Math.max(150,rel+240);ball.vx+=nx*imp*.72+c.vx*.32;ball.vy+=ny*imp*.72+c.vy*.18;} c.vx-=nx*35;}
+}
+function ballPhysics(dt){ball.vy+=930*dt;ball.x+=ball.vx*dt;ball.y+=ball.vy*dt;ball.vx*=Math.pow(.994,dt*60);
+ if(ball.y+ball.r>ground){ball.y=ground-ball.r;if(ball.vy>0)ball.vy*=-.58;if(Math.abs(ball.vy)<28)ball.vy=0;ball.vx*=.985}
+ if(ball.y-ball.r<95){ball.y=95+ball.r;ball.vy=Math.abs(ball.vy)*.65}
+ // outer walls exist above goals; inside goal mouth ball may cross goal line
+ if(ball.x-ball.r<leftWall && ball.y<goalTop){ball.x=leftWall+ball.r;ball.vx=Math.abs(ball.vx)*.72}
+ if(ball.x+ball.r>rightWall && ball.y<goalTop){ball.x=rightWall-ball.r;ball.vx=-Math.abs(ball.vx)*.72}
+ // back nets
+ if(ball.x-ball.r<20){ball.x=20+ball.r;ball.vx=Math.abs(ball.vx)*.4}if(ball.x+ball.r>1260){ball.x=1260-ball.r;ball.vx=-Math.abs(ball.vx)*.4}
+ // goal crossbars
+ for(const gx of [goalLineL,goalLineR]){let dx=ball.x-gx,dy=ball.y-goalTop;if(Math.hypot(dx,dy)<ball.r+9){let d=Math.hypot(dx,dy)||1,nx=dx/d,ny=dy/d;ball.x=gx+nx*(ball.r+9);ball.y=goalTop+ny*(ball.r+9);let dot=ball.vx*nx+ball.vy*ny;if(dot<0){ball.vx-=1.6*dot*nx;ball.vy-=1.6*dot*ny}}}
+}
+function checkGoal(){if(ball.y+ball.r>goalTop&&ball.x+ball.r<goalLineL){scoreR++;goal('ROBOT SCORES!')}else if(ball.y+ball.r>goalTop&&ball.x-ball.r>goalLineR){scoreP++;goal('PLAYER SCORES!')}}
+function goal(msg){updateHud();state='goal';goalPause=.65;countEl.textContent=msg;countEl.classList.remove('hidden')}
+function endGame(){state='ended';countEl.classList.add('hidden');let r=scoreP>scoreR?'YOU WIN':scoreP<scoreR?'YOU LOSE':'DRAW';$('result').textContent=r;$('finalScore').textContent=`PLAYER ${scoreP} — ${scoreR} ROBOT`;end.classList.remove('hidden');updateHud()}
+function update(dt){
+ if(state==='countdown'){countdown-=dt;let v=countdown>2.65?'3':countdown>1.65?'2':countdown>.65?'1':'GO!';countEl.textContent=v;if(countdown<=0){countEl.classList.add('hidden');state='playing';}return}
+ if(state==='goal'){goalPause-=dt;if(goalPause<=0){beginCountdown(false);countdown=2.65;}return}
+ if(state!=='playing')return;
+ timeLeft-=dt;if(timeLeft<=0){timeLeft=0;endGame();return}updateHud();
+ let dir=(keys.ArrowRight?1:0)-(keys.ArrowLeft?1:0);carPhysics(player,dir,keys.Space,keys.ArrowUp,dt);ai(dt);collideCars(player,bot);hitBall(player);hitBall(bot);ballPhysics(dt);hitBall(player);hitBall(bot);checkGoal();
+}
+function drawStadium(){
+ ctx.clearRect(0,0,W,H);let sky=ctx.createLinearGradient(0,0,0,ground);sky.addColorStop(0,'#74c9f5');sky.addColorStop(.52,'#d9f2ff');sky.addColorStop(.53,'#263544');sky.addColorStop(1,'#18242d');ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
+ // stands
+ ctx.fillStyle='#273743';ctx.fillRect(0,190,W,225);for(let y=215;y<390;y+=22){for(let x=(y%44);x<W;x+=28){let cols=['#ffd166','#ef476f','#06d6a0','#f8f9fa','#5ca9ff'];ctx.fillStyle=cols[(x/28+y/22|0)%cols.length];ctx.beginPath();ctx.arc(x,y,5,0,7);ctx.fill()}}
+ ctx.fillStyle='#1e6d35';ctx.fillRect(0,415,W,ground-415);ctx.fillStyle='#31974d';for(let i=0;i<10;i++)ctx.fillRect(i*128,415,64,ground-415);
+ ctx.strokeStyle='#fff9';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(W/2,415);ctx.lineTo(W/2,ground);ctx.stroke();ctx.beginPath();ctx.arc(W/2,ground,110,Math.PI,0);ctx.stroke();
+ // goals
+ drawGoal(20,goalLineL,false);drawGoal(goalLineR,1260,true);ctx.fillStyle='#5a3c21';ctx.fillRect(0,ground,W,H-ground);
+}
+function drawGoal(back,line,right){ctx.save();ctx.strokeStyle='#f7fbff';ctx.lineWidth=9;ctx.strokeRect(Math.min(back,line),goalTop,Math.abs(line-back),goalH);ctx.strokeStyle='#ffffff55';ctx.lineWidth=2;for(let x=Math.min(back,line)+12;x<Math.max(back,line);x+=16){ctx.beginPath();ctx.moveTo(x,goalTop);ctx.lineTo(x,ground);ctx.stroke()}for(let y=goalTop+15;y<ground;y+=18){ctx.beginPath();ctx.moveTo(Math.min(back,line),y);ctx.lineTo(Math.max(back,line),y);ctx.stroke()}ctx.restore()}
+function drawCar(c,isPlayer){ctx.save();ctx.translate(c.x,c.y);ctx.rotate(c.angle);ctx.fillStyle=c.color;ctx.beginPath();ctx.roundRect(-46,-23,92,36,10);ctx.fill();ctx.fillStyle='#cceeff';ctx.beginPath();ctx.moveTo(-17,-23);ctx.lineTo(8,-40);ctx.lineTo(31,-23);ctx.fill();ctx.fillStyle='#101820';for(const x of [-28,29]){ctx.beginPath();ctx.arc(x,14,14,0,7);ctx.fill();ctx.fillStyle='#adb5bd';ctx.beginPath();ctx.arc(x,14,6,0,7);ctx.fill();ctx.fillStyle='#101820'}ctx.fillStyle='#fff';ctx.fillRect(38,-12,8,9);ctx.restore();if(isPlayer){ctx.fillStyle='#fff';ctx.beginPath();ctx.moveTo(c.x,c.y-82);ctx.lineTo(c.x-12,c.y-102);ctx.lineTo(c.x+12,c.y-102);ctx.closePath();ctx.fill()}}
+function drawBall(){ctx.save();ctx.translate(ball.x,ball.y);ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(0,0,ball.r,0,7);ctx.fill();ctx.fillStyle='#18212b';ctx.beginPath();ctx.arc(0,0,10,0,7);ctx.fill();for(let a=0;a<6;a++){let q=a*Math.PI/3;ctx.beginPath();ctx.arc(Math.cos(q)*21,Math.sin(q)*21,5,0,7);ctx.fill()}ctx.restore()}
+function draw(){drawStadium();drawCar(player,true);drawCar(bot,false);drawBall();}
+function loop(t){let dt=Math.min(.025,(t-last)/1000||0);last=t;update(dt);draw();requestAnimationFrame(loop)}
+updateHud();requestAnimationFrame(loop);
+})();
+</script>
 </body>
 </html>
-<h3>Let's Make a Game!</h3>
-
-<a href="https://docs.google.com/document/d/13Attp9QPsTzsSacFqD1KdfFGE6nYQ3oebGFJQ1QE2eU/edit?usp=drivesdk" target="_blank">
-  View Assignment Document
-</a>
-
-<a href="game_name.html">
-  Play My Game
-</a>
